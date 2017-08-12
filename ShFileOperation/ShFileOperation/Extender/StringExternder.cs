@@ -25,7 +25,7 @@ namespace Extender
 
 		/// <summary>
 		/// Join拡張メソッド。もうPythonのアレです。
-		/// 標準のJoinメソッドをオーバーロードしてるので、気を付けてください。
+		/// 標準のJoinメソッドと同名なので気を付けてください。
 		/// </summary>
 		/// <example>
 		/// <code>
@@ -34,18 +34,18 @@ namespace Extender
 		/// </code>
 		/// </example>
 		/// <typeparam name="T"></typeparam>
-		/// <param name="instance">連結子</param>
-		/// <param name="enumerable">連結されるインスタンス</param>
-		/// <returns></returns>
-		public static string Join<T>( this string instance, IEnumerable<T> enumerable )
+		/// <param name="connector">連結子</param>
+		/// <param name="target">連結されるインスタンス</param>
+		/// /// <returns></returns>
+		public static string Join<T>( this string connector, IEnumerable<T> target )
 		{
-			return string.Join( instance, enumerable );
+			return string.Join( connector, target );
 		}
 
-		public static string JoinMonad<T>( this string instance, IEnumerable<T> enumerable )
+		public static string JoinMonad<T>( this string connector, IEnumerable<T> target )
 		{
 			try {
-				return string.Join( instance, enumerable );
+				return string.Join( connector, target );
 			} catch ( Exception ) {
 				return default( string );
 			}

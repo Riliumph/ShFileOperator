@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace Extender
@@ -9,16 +8,6 @@ namespace Extender
 	/// </summary>
 	public static class EnumerableExtender
 	{
-		public static T Find<T>( this IEnumerable<T> instance, Func<T, bool> predicate )
-		{
-			foreach ( var current in instance ) {
-				if ( predicate( current ) ) {
-					return current;
-				}
-			}
-			return default( T );
-		}
-
 		/// <summary>
 		/// IEnumerableが空もしくはnullである状態を検知します。
 		/// </summary>
